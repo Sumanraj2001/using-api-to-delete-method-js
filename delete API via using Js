@@ -1,0 +1,25 @@
+
+        const contactId = '402002717776';  
+        const apiKey = 'D4cpGZqJVv-kydQgp0JCZA';  
+        const apiUrl = `https://ags1-562267618005678437/api/contacts/${contactId}`;
+        
+        const headers = {
+          'Authorization': `Token token=${apiKey}`,
+          'Content-Type': 'application/json'
+        };
+        
+      
+        fetch(apiUrl, {
+          method: 'DELETE',
+          headers: headers,
+        })
+        .then(response => {
+          if (response.ok) {
+            console.log('Contact deleted successfully');
+          } else {
+            console.error('Failed to delete contact');
+          }
+        })
+        .catch(error => {
+          console.error('Error deleting contact:', error);
+        });
